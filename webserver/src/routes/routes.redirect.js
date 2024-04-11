@@ -1,5 +1,5 @@
 import Express from "express";
-import GetParams from "../controllers/getData.js";
+import GetParams from "../controllers/controller.getData.js";
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from "node:url";
