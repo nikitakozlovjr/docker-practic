@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "bin": {
-    "start-server": "bin/server.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start-server"
+    "start": "node bin/server.js"
   },
   "author": "Nikita Kozlov",
   "license": "ISC",
