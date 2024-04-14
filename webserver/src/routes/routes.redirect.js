@@ -1,38 +1,41 @@
 import Express from "express";
 import GetParams from "../controllers/controller.getData.js";
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from "node:url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import getHeaders from "../utils/getHeaders.js";
 
 const router = new Express();
 
-router.get('/', (req, res) => {
+router.get('/', (__req, res) => {
     res.render('sections/major');
 });
 
-router.get('/championsLeaque', async (req, res) => {
-    const content = new GetParams().getChampionsLeaque();
-    console.log(content);
-    res.render('sections/сhampionsLeague');
+router.get('/championsLeaque', async (__req, res) => {
+    const contents = await new GetParams().getChampionsLeaque();
+    const headers = getHeaders(contents);
+    res.render('sections/championsLeague', { headers, contents });
 });
 
-router.get('/europeanPlayers', (req, res) => {
-    res.render('sections/europeanPlayers');
+router.get('/europeanPlayers', async (__req, res) => {
+    const contents = await new GetParams().getEuropeanPlayers();
+    const headers = getHeaders(contents);
+    res.render('sections/europeanPlayers', { headers, contents });
 });
 
-router.get('/goldenboots', (req, res) => {
-    res.render('sections/goldenboots');
+router.get('/goldenboots', async (__req, res) => {
+    const contents = await new GetParams().getGoldenBoots();
+    const headers = getHeaders(contents);
+    res.render('sections/goldenboots', { headers, contents });
 });
 
-router.get('/goldenballs', (req, res) => {
-    res.render('sections/goldenballs');
+router.get('/goldenballs', async (__req, res) => {
+    const contents = await new GetParams().getGoldenBall();
+    const headers = getHeaders(contents);
+    res.render('sections/goldenballs', { headers, contents });
 });
 
-router.get('/worldChampions', (req, res) => {
-    res.render('sections/worldChampions');
+router.get('/worldChampions', async (__req, res) => {
+    const contents = await new GetParams().getWorldChampions();
+    const headers = getHeaders(contents);
+    res.render('sections/worldChampions', { contents, headers });
 });
 
 export default router;
