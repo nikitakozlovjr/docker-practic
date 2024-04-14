@@ -4,3 +4,14 @@ block content
     div 
         h3 Лучшие игроки мира с 1990-2023
         p В таблице представлены игроки получавшие награду "Золотой мяч"
+
+    table 
+        tr 
+            td #{headers[0]}
+            td #{headers[1]}
+            td #{headers[2]}
+        for content in contents 
+            tr 
+                th #{content.year}
+                th #{content.player}
+                th #{content.club}

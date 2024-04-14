@@ -1,6 +1,18 @@
 extends ../layouts/main.pug
 
+
 block content 
     div 
         h3 Победители Лиги чемпионов с 1990-2023
-        p В таблице представлены команды-победители данного турнира 
+        p В таблице представлены команды-победители данного турнира
+    
+    table 
+        tr 
+            td #{headers[0]}
+            td #{headers[1]}
+            td #{headers[2]}
+        for content in contents 
+            tr 
+                th #{content.year}
+                th #{content.club}
+                th #{content.country}

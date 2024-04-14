@@ -4,3 +4,14 @@ block content
     div 
         h3 Победители Чемпионата Мира с 1990-2023
         p В таблице представлены страны-победители данного турнира 
+
+    table 
+        tr 
+            td #{headers[0]}
+            td #{headers[1]}
+            td #{headers[2]}
+        for content in contents 
+            tr 
+                th #{content.year}
+                th #{content.country}
+                th #{content.place}
