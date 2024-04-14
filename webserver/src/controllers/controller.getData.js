@@ -1,23 +1,25 @@
-import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from "node:url";
+import csv from 'csvtojson';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 class GetParams {
     async getChampionsLeaque() {
-        const content = fs.readFileSync(path.join(__dirname, '..', '..', 'db', 'championsLeaque.csv'), 'utf-8');
-        return content;
+        return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'championsLeaque.csv'))
     }
     async getWorldChampions() {
-        const content = fs.readFileSync(path.join(__dirname, '..', '..', 'db', 'championsLeaque.csv'), 'utf-8');
+        return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'worldChampions.csv'))
     }
-    async getChampionsLeaque() {
-        const content = fs.readFileSync(path.join(__dirname, '..', '..', 'db', 'championsLeaque.csv'), 'utf-8');
+    async getEuropeanPlayers() {
+        return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'europeanPlayers.csv'))
     }
-    async getChampionsLeaque() {
-        const content = fs.readFileSync(path.join(__dirname, '..', '..', 'db', 'championsLeaque.csv'), 'utf-8');
+    async getGoldenBall() {
+        return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'goldenBall.csv'))
+    }
+    async getGoldenBoots() {
+        return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'goldenBoots.csv'))
     }
 };
 
