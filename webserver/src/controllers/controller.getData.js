@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 class GetParams {
     async getChampionsLeaque() {
-        return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'championsLeaque.csv'))
+        return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'championsLeaque.csv'));
     }
     async getWorldChampions() {
         return await csv().fromFile(path.join(__dirname, '..', '..', 'db', 'worldChampions.csv'))
