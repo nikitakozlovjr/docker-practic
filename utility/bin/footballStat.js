@@ -4,4 +4,4 @@ const paramStatistic = process.argv[2]
 
 const statistic = await new FootballStatService(paramStatistic).getStat();
 
-console.log(statistic);
+console.table(statistic);
