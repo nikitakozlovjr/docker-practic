@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  webserver:
+    build:
+      context: ./webserver
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+  utility:
+    build:
+      context: ./utility
+      dockerfile: Dockerfile
+    network_mode: "host"
+    tty: true               
+    stdin_open: true  
+    depends_on:
+      - webserver
