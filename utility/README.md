@@ -35,7 +35,7 @@ docker build -t footservice ./utility
 Run the container based on the downloaded image with the following command
 
 ```
-docker run -it --net=host footservice 
+docker run -it --net=host footservice bash
 ```
 
 After the container is launched, the actions of your console will go to the container and you will immediately be able to use the service using the commands specified in [this section]()
