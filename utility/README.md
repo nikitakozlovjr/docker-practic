@@ -2,7 +2,7 @@
 
 ### About
 
-This service is a console utility that allows you to quickly find out statistics on a topic of interest to you from the world of football. This service uses the webserver data and works with its API key, so it will not be able to give an answer if the webserver is not running
+This service is a console utility that allows you to quickly find out statistics on a topic of interest to you from the world of football. This service uses the webserver data and works with its [API key](championsLeaque), so it will not be able to give an answer if the webserver is not running
 
 ### Installation 
 
