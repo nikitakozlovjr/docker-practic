@@ -43,6 +43,12 @@ To run image-based containers in the background, use the command
 docker compose up -d 
 ```
 
+or
+
+```
+make run
+```
+
 Congratulations! Now you can use the webserver and the utility
 
 ### Use webserver
@@ -61,6 +67,12 @@ To use the utility, first go to the running utility container. To do this, use t
 
 ```
 docker exec -it utility /bin/sh
+```
+
+or 
+
+```
+make utility-start
 ```
 
 Detailed instructions on how to use the utility can be found [here](https://github.com/nikitakozlovjr/docker-practic/tree/main/utility#use)
