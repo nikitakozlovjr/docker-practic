@@ -2,4 +2,7 @@ build:
 	docker compose build
 
 run:
-	docker compose run utility bash
+	docker compose up -d 
+
+utility-start:
+	docker exec -it utility /bin/sh
